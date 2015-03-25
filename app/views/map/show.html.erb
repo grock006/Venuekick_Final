@@ -60,10 +60,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </head>
   <body>
     <div class="row">
-      <div class="col-sm-7">
+      <div class="col-sm-7 show">
       <div id="map-canvas"></div>
       </div>
-      <div class="col-sm-5">
+      <div class="col-sm-5 showlink">
         <% @results.find do |r| %>
         <h3><strong>Music Venues for <%= r.metro_area.display_name %></strong></h3>
         <% end %>
