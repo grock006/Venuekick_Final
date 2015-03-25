@@ -26,6 +26,17 @@ footer {
 .col-sm-5.address a {
   color: #df691a;
 }
+.col-sm-5.showlink {
+  overflow: auto;
+  max-height: 550px;
+}
+.col-sm-6.details {
+  overflow: auto;
+  max-height: 550px;
+}
+.col-sm-6.details h3 {
+  margin-top: 0px;
+}
 .col-sm-6 h3.instagram {
   margin-top: 0px;
   margin-bottom: 10px;

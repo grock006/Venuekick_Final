@@ -90,17 +90,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <br>
            <em><p><%= @venue.description %></p></em>
            <% end %>
+
+        <h3 class="instagram"><strong>Recent Instagrams</strong><em><span style="color: #1a90df">#<%= @name %></span></em></h3>
+         <% @images.each do |i|%>
+         <a href="<%= i.link %>" target="blank" ><img src="<%= i.images.thumbnail.url %>" class="instagram-side thumbnail" style="display:inline"></a>
+         <% end %>
          
         </div>
+
            
           </div>
          </div>           
       
-       <div class="col-sm-6">
-         <h3 class="instagram"><strong>Recent Instagrams</strong> <span style="color: #0277ad"><em>#<%= @name %></em></span></h3>
-         <% @images.each do |i|%>
-         <a href="<%= i.link %>" target="blank" ><img src="<%= i.images.thumbnail.url %>" class="instagram-side thumbnail" style="display:inline"></a>
-         <% end %>
+       <div class="col-sm-6 details">
+       
         
         <h3><strong>Upcoming Events</strong></h3>
          <br>
@@ -110,9 +113,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <em style="color:white"><%= r.start.strftime("%A, %d %b %Y %l:%M %p") %></em>
           <p class="lead"><a href="<%= r.uri %>" target="_blank"><%= r.display_name.titleize %></a><br></p>
            
-           <a class="btn btn-sm pull-right" style="margin-left:5px; color: white; background-color: #df691a" href="<%= r.uri %>" target="_blank">Buy Tickets</a>
+           <a class="btn btn-sm pull-right" style="margin-left:5px; color: white; background-color: #DF691A" href="<%= r.uri %>" target="_blank">Buy Tickets</a>
            
-           <a class="btn btn-sm pull-right" style="background-color: #0277ad; color: white" href="/save/<%= r.id %>">Save</a>
+           <a class="btn btn-sm pull-right" style="background-color: #1a90df; color: white" href="/save/<%= r.id %>">Save</a>
         </div>
          </div>
         <% end %>
