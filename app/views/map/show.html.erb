@@ -18,17 +18,18 @@ $( document ).ready(function() {
 <% @results.each do |x| %>
    <% unless x.lat == nil %>
 
-      var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h3 id="firstHeading" class="firstHeading"><a href="<%= x.website %>"><%= x.display_name.titleize %></a></h3>'+
-      '<div id="bodyContent">'+
-      '<span class="glyphicon glyphicon-calendar"></span><a href="/map/show/<%= x.id %>" style="text-decoration:none"> Upcoming Shows</a>' +
-      '<address style=><p><%= x.street %></p>'+
-      '<p><%= x.metro_area.display_name %>, <%= x.metro_area.state %></p>'+
-      '<p><%= x.zip %></p></address>'+
-      '<p><span class="glyphicon glyphicon-earphone"></span> <%= x.phone %></p>'+
-      '</div>'+
+      var contentString = 
+      '<div id="content">'+
+        '<div id="siteNotice">'+'</div>'+
+            '<h3 id="firstHeading" class="firstHeading"><a href="<%= x.website %>"><%= x.display_name.titleize %></a></h3>'+
+            '<div id="bodyContent">'+
+              '<span class="glyphicon glyphicon-calendar"></span><a href="/map/show/<%= x.id %>" style="text-decoration:none"> Upcoming Shows</a>' +
+                '<address><%= x.street %><br>'+
+                '<%= x.metro_area.display_name %>, <%= x.metro_area.state %><br>'+
+                '<%= x.zip %><br>'+
+                '<%= x.phone %><br>'+
+                '<a href="<%= x.website %>"><%= x.display_name.titleize %> Website</a></address>'+
+            '</div>'+
       '</div>';
       
   var myinfowindow = new google.maps.InfoWindow({
