@@ -75,16 +75,12 @@ function handleNoGeolocation(errorFlag) {
   <body onload="initialize()">         
     <div class="row">
       <div class="col-sm-12">
-       <% @images.each do |i|%>
-        <a href="<%= i.link %>" target="_blank" title="#"><img style="display:inline" class="image-instagram thumbnail" src="<%= i.images.thumbnail.url %>"></a>
-      <% end %> 
+
         
 
         <div id="map-canvas"></div>
         <br>
-      <% @concerts.each do |i|%>
-        <a href="<%= i.link %>" target="blank" ><img style="display:inline"class="image-instagram thumbnail" src="<%= i.images.thumbnail.url %>"></a>
-      <% end %> 
+
      </div>
      </div>   
   </body>

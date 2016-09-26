@@ -1,10 +1,10 @@
 class MapController < ApplicationController
   def index
-    @client = Instagram.client
-    @image = @client.tag_recent_media('concertphotography')
-    @images = @image.first(12)
-    @concert = @client.tag_recent_media('concertjunkie')
-    @concerts = @concert.first(12)  
+    # @client = Instagram.client
+    # @image = @client.tag_recent_media('concertphotography')
+    # @images = @image.first(12)
+    # @concert = @client.tag_recent_media('concertjunkie')
+    # @concerts = @concert.first(12)  
   end
 
   def show
@@ -23,7 +23,7 @@ class MapController < ApplicationController
     @result = @remote.venue_calendar(params[:venue_id]).results
     @venue = @remote.venue(params[:venue_id])
     
-    @client = Instagram.client
+    # @client = Instagram.client
     @results = @result
         
     @results.find do |r|
@@ -31,8 +31,8 @@ class MapController < ApplicationController
       @name = @names
     end
     
-    @image = @client.tag_recent_media(@name)
-    @images = @image.first(6)   
+    # @image = @client.tag_recent_media(@name)
+    # @images = @image.first(6)   
     end
   
   def saved
